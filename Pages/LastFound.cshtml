@@ -1,0 +1,16 @@
+﻿@page
+@model Zad3.Pages.LastFoundModel
+@{
+    ViewData["Title"] = "Last found";
+}
+<h1>Last found:</h1>
+@{
+    if (Model.NumbersList != null)
+    {
+        @for (int i = Model.NumbersList.Count - 1; i >= 0; i--)
+        {
+            <p>Wynik: @Model.NumbersList[i].Message Liczba: @Model.NumbersList[i].Number Data: @Model.NumbersList[i].Date</p>
+        }
+
+    }
+}

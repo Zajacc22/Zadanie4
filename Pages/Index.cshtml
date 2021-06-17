@@ -1,0 +1,37 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <div class="col-12">
+            <form method="post">
+                <div class="row">
+                    <div class="form-group col-sm-12 text-center">
+                        <label asp-for="Numbers.Number" class="text-center"></label>
+                        <br /><input asp-for="Numbers.Number" type="Number" /><br />
+                        <b><span asp-validation-for="Numbers.Number" class="text-danger"></span></b>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-center"><button type="submit" class="btn-submit">Zatwierdź</button></div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12">
+                        @{
+                            if (TempData.Peek("Message") != null)
+                            {
+                                <hr><p>@TempData.Peek("Message")</p>
+                            }
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

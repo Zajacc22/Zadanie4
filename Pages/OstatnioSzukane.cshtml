@@ -1,0 +1,14 @@
+﻿@page
+@model Zad3.Pages.OstatnioSzukaneModel
+@{
+}
+@foreach (var item in Model.Number)
+{
+<p>
+    @Html.DisplayFor(modelItem => item.Number)
+    @Html.DisplayFor(modelItem => item.Date)
+    @Html.DisplayFor(modelItem => item.Message)
+    <a asp-page="./Delete" asp-route-id="@item.Id">Delete </a>
+</p>
+}
+
